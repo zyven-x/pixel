@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@tailwind utilities;
+
+.input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500;
+}
+
+.btn-primary {
+  @apply bg-black/80 hover:bg-black text-white font-semibold py-2 px-4 rounded-md;
+}
+
+.btn-secondary {
+  @apply bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-md;
+}
+
+.btn-icon {
+  @apply text-sm text-white px-2 py-2 bg-black/80 hover:bg-black/60 rounded-full;
+}
+
+.card {
+  @apply border border-gray-300 rounded-lg p-3 bg-white shadow-sm;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes borderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.group:hover .glow-effect,
+.group:focus-within .glow-effect {
+  opacity: 1;
+  animation: borderFlow 4s ease-in-out infinite alternate;
+}
+
+.glow-effect {
+  opacity: 0;
+  background: linear-gradient(90deg, #00ffff, #ffffff, #ff66cc);
+  background-size: 200% 100%;
+  border-radius: 9999px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.glow-effect {
+  filter: blur(30px);
+  z-index: -2;
+}
+
+
