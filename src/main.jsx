@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, BrowserRouter, Routes, Route } from "react-router-dom";
 import { SessionContextProvider } from "@supabase/auth-helpers-react";
 import { supabase } from "./supabaseClient";
 
@@ -13,10 +13,11 @@ import ResetPassword from "./pages/ResetPassword.jsx";
 
 import "./index.css";
 
+const Router = import.meta.env.VITE_IS_EXTENSION === "true" ? HashRouter : BrowserRouter;
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <SessionContextProvider supabaseClient={supabase}>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/reset-password" element={<ResetPassword />} />
@@ -31,7 +32,7 @@ createRoot(document.getElementById("root")).render(
             }
           />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </SessionContextProvider>
   </StrictMode>
 );
