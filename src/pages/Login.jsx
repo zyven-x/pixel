@@ -29,8 +29,12 @@ export default function Login() {
   }
 
   async function handleGoogleLogin() {
+    const redirectTo = "https://pixel-io.vercel.app";
     await supabase.auth.signInWithOAuth({
       provider: "google",
+      options: {
+        redirectTo,
+      },
     });
   }
 
