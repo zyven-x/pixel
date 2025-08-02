@@ -1,14 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "Pixel",
+  "name": "Pixel: Password & Notes Manager",
   "version": "1.0",
-  "description": "Simple Password and Notes Manager",
-  "permissions": ["storage"],
+  "description": "Free & Highly Encrypted Manager to Securely manage notes and passwords",
   "action": {
     "default_popup": "index.html",
-    "default_icon": "icon.png"
+    "default_title": "Pixel Vault"
   },
   "icons": {
-    "128": "icon.png"
-  }
+    "48": "logo.png",
+    "128": "logo.png"
+  },
+  "permissions": []
 }
