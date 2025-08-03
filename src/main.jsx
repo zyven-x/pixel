@@ -10,6 +10,7 @@ import Signup from "./pages/Signup";
 import VerifyEmail from "./pages/VerifyEmail";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import ResetPassword from "./pages/ResetPassword.jsx";
+import AuthCallback from "./pages/AuthCallback.jsx"
 
 import "./index.css";
 
