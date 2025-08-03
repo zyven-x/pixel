@@ -2,6 +2,7 @@ import { useState } from "react";
 import { supabase } from "../supabaseClient";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useUser } from "@supabase/auth-helpers-react";
+import useIsExtension from "../hooks/useIsExtension";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -10,6 +11,7 @@ export default function Login() {
   const navigate = useNavigate();
   const user = useUser();
   const [message, setMessage] = useState("");
+  const isExtension = useIsExtension();
 
   if (user === undefined) return null;
   if (user) return <Navigate to="/" />;
@@ -29,8 +31,14 @@ export default function Login() {
   }
 
   async function handleGoogleLogin() {
-    const redirectTo = "https://pixel-io.vercel.app";
-    
+  const redirectTo = "https://pixel-io.vercel.app";
+
+  if (isExtension) {
+    window.open(
+      `https://bftyqxmxngfawxkfpavx.supabase.co/auth/v1/authorize?provider=google&redirect_to=${encodeURIComponent(redirectTo)}`,
+      "_blank"
+    );
+  } else {
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
@@ -38,6 +46,7 @@ export default function Login() {
       },
     });
   }
+}
 
   async function handleForgotPassword() {
     if (!email) {
