@@ -57,8 +57,8 @@
 
 .popup-wrapper,
 .popup-wrapper #root {
-  width: 360px;
-  height: 600px;
+  width: 600px;
+  height: 430px;
   overflow: auto;
   margin: 0;
   padding: 0;

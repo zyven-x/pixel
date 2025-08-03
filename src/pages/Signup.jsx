@@ -39,7 +39,11 @@ export default function SignUp() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-white px-4">
       <div className="bg-white rounded-xl p-8 w-full max-w-md">
-        <h1 className="text-4xl font-bold mb-8 text-center text-black">Create a Pixel Account</h1>
+        <div className="justify-center items-center flex mb-8 gap-4">
+          <h1 className="text-4xl font-bold text-center text-black">
+            Create a Pixel Account
+          </h1>
+        </div>
         <form onSubmit={handleSignUp} className="space-y-4">
           <input
             className="w-full p-3 pl-4 border border-gray-300 rounded-full"

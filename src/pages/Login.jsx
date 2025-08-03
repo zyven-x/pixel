@@ -31,22 +31,19 @@ export default function Login() {
   }
 
   async function handleGoogleLogin() {
-  const redirectTo = "https://pixel-io.vercel.app";
+    const redirectTo = "https://pixel-io.vercel.app";
 
-  if (isExtension) {
-    window.open(
-      `https://bftyqxmxngfawxkfpavx.supabase.co/auth/v1/authorize?provider=google&redirect_to=${encodeURIComponent(redirectTo)}`,
-      "_blank"
-    );
-  } else {
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo,
-      },
-    });
+    if (isExtension) {
+      window.open("https://pixel-io.vercel.app/login", "_blank");
+    } else {
+      await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo,
+        },
+      });
+    }
   }
-}
 
   async function handleForgotPassword() {
     if (!email) {
