@@ -23,6 +23,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/verify" element={<VerifyEmail />} />
+          <Route path="/auth-callback" element={<AuthCallback />} />
           <Route
             path="/"
             element={
