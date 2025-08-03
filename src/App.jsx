@@ -12,6 +12,7 @@ import PreviewImage from "./components/PreviewImage";
 import NoteContent from "./components/NoteContent";
 import PasswordContent from "./components/PasswordContent";
 import Login from "./pages/Login";
+import useIsExtension from "./hooks/useIsExtension";
 
 export default function App() {
   const [vault, setVault] = useState([]);
@@ -41,6 +42,7 @@ export default function App() {
   const user = useUser();
   const [profile, setProfile] = useState(null);
   const [previewImageUrl, setPreviewImageUrl] = useState(null);
+  const isExtension = useIsExtension();
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -368,7 +370,7 @@ export default function App() {
   if (user === undefined) return null;
   if (!user) return <Login />;
   return (
-    <div className="h-[100vh] bg-white text-black font-sans">
+    <div className={`h-[100vh] bg-white text-black font-sans ${isExtension ? "popup-wrapper" : ""}`}>
       <Header
         searchText={searchText}
         handleSearch={handleSearch}

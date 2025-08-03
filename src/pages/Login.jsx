@@ -30,6 +30,7 @@ export default function Login() {
 
   async function handleGoogleLogin() {
     const redirectTo = "https://pixel-io.vercel.app";
+    window.open(redirectTo, "_blank");
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
