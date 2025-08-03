@@ -380,7 +380,7 @@ export default function App() {
         user={user}
         onEditUsername={handleEditUsername}
         onEditAvatar={handleEditAvatar}
-        onSignOut={() => supabase.auth.signOut()}
+        onSignOut={() => supabase.auth.signOut({ scope: 'local' })}
       />
       <div className="flex h-[calc(100vh-64px)]">
         <Sidebar
