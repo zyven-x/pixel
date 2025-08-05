@@ -1,6 +1,6 @@
-# [**PIXEL**](https://pixel-io.vercel.app/)
-Secure ur Data like Pixel, so only thing that can be visible is screen.
+# Secure ur Data like Pixel, so only thing will be visible is screen.
 
+# [**PIXEL**](https://pixel-io.vercel.app/)
 
 Pixel is a Web app where u can store your Passwords/Credentials & Notes on Cloud. All the data is Saved in highly encrypted vault to safeguard ur sensitive data.
 
